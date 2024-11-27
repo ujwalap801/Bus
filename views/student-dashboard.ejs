@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Student Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+  <nav class="bg-blue-800 text-white p-4 fixed top-0 left-0 right-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="https://vnrvjiet.ac.in/" class="text-xl font-semibold">VNRVJIET</a>
+      <div class="space-x-4">
+        <a href="https://vnrvjiet.ac.in/" class="hover:underline">Home</a>
+        <a href="https://vnrvjiet.ac.in/" class="hover:underline">About</a>
+        <a href="https://vnrvjiet.ac.in/" class="hover:underline">Admissions</a>
+        <a href="https://vnrvjiet.ac.in/" class="hover:underline">Contact</a>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mx-auto mt-10">
+    <h1 class="text-3xl font-bold mb-6">Student Dashboard</h1>
+    <table class="table-auto w-full bg-white rounded shadow">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">Bus Name</th>
+          <th class="px-4 py-2">Timings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% buses.forEach(bus => { %>
+        <tr>
+          <td class="border px-4 py-2"><%= bus.busName %></td>
+          <td class="border px-4 py-2"><%= bus.timings %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <a href="/logout" class="block mt-4 text-blue-500">Logout</a>
+  </div>
+</body>
+</html>

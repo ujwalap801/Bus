@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Driver Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto mt-10">
+    <h1 class="text-3xl font-bold mb-6">Driver Dashboard</h1>
+    <a href="/driver/bus/add" class="bg-green-500 text-white px-4 py-2 rounded mb-4">Add New Bus</a>
+    <table class="table-auto w-full bg-white rounded shadow">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">Bus Name</th>
+          <th class="px-4 py-2">Timings</th>
+          <th class="px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% buses.forEach(bus => { %>
+        <tr>
+          <td class="border px-4 py-2"><%= bus.busName %></td>
+          <td class="border px-4 py-2"><%= bus.timings %></td>
+          <td class="border px-4 py-2">
+            <a href="/driver/bus/<%= bus._id %>/edit" class="text-blue-500">Edit</a>
+            <form action="/driver/bus/<%= bus._id %>?_method=DELETE" method="POST" class="inline-block">
+              <button type="submit" class="text-red-500">Delete</button>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <a href="/logout" class="block mt-4 text-blue-500">Logout</a>
+  </div>
+</body>
+</html>

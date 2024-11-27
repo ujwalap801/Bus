@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add Bus</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto mt-10">
+    <h1 class="text-3xl font-bold mb-6">Add New Bus</h1>
+    <form action="/driver/bus" method="POST" class="bg-white p-6 rounded shadow-md">
+      <div class="mb-4">
+        <label for="busName" class="block text-gray-700 font-bold">Bus Name</label>
+        <input type="text" id="busName" name="busName" required class="w-full border rounded p-2">
+      </div>
+      <div class="mb-4">
+        <label for="timings" class="block text-gray-700 font-bold">Timings</label>
+        <input type="text" id="timings" name="timings" required class="w-full border rounded p-2">
+      </div>
+      <button type="submit" class="w-full bg-green-500 text-white px-4 py-2 rounded">Add Bus</button>
+    </form>
+  </div>
+</body>
+</html>
